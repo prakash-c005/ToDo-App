@@ -10,10 +10,7 @@ public class DBUtil {
     private static final Properties props = new Properties();
 
     static {
-        try (InputStream is =
-                     DBUtil.class
-                             .getClassLoader()
-                             .getResourceAsStream("application.properties")) {
+        try (InputStream is =DBUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
 
             if (is == null) {
                 throw new RuntimeException("application.properties not found");
