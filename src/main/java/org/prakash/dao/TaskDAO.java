@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskDAO {
-
-    // INSERT → always PENDING
+    // INSERT: always PENDING
     public void addTask(Task task) throws Exception {
         String sql = "INSERT INTO tasks (title, description, status) VALUES (?, ?, ?)";
 
@@ -26,7 +25,8 @@ public class TaskDAO {
 
     // GET ALL
     public List<Task> getAllTasks() throws Exception {
-        String sql = "SELECT * FROM tasks";
+        // Keep the display and selection order stable without changing ids.
+        String sql = "SELECT * FROM tasks ORDER BY id ASC";
         List<Task> list = new ArrayList<>();
 
         try (Connection con = DBUtil.getConnection();
@@ -42,7 +42,8 @@ public class TaskDAO {
 
     // FILTER BY STATUS
     public List<Task> getTasksByStatus(String status) throws Exception {
-        String sql = "SELECT * FROM tasks WHERE status = ?";
+        // Use the same deterministic order for filtered lists.
+        String sql = "SELECT * FROM tasks WHERE status = ? ORDER BY id ASC";
         List<Task> list = new ArrayList<>();
 
         try (Connection con = DBUtil.getConnection();
@@ -59,7 +60,7 @@ public class TaskDAO {
         return list;
     }
 
-    // UPDATE → COMPLETED (returns false if ID not found)
+    // UPDATE: COMPLETED (returns false if ID not found)
     public boolean markTaskCompleted(int id) throws Exception {
         String sql = "UPDATE tasks SET status = 'COMPLETED' WHERE id = ?";
 
@@ -83,7 +84,7 @@ public class TaskDAO {
         }
     }
 
-    // COMMON RESULTSET → TASK MAPPER
+    // COMMON RESULTSET: TASK MAPPER
     private Task mapRowToTask(ResultSet rs) throws SQLException {
         Task t = new Task(
                 rs.getString("title"),

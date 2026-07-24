@@ -10,14 +10,14 @@ public class Task {
     private String status;
     private Timestamp createdAt;
 
-    // 1️⃣ Constructor for INSERT (Menu → DAO)
+    // Constructor for INSERT (Menu to DAO)
     public Task(String title, String description, String status) {
         this.title = title;
         this.description = description;
         this.status = status;
     }
 
-    // 2️⃣ Constructor for READ (DAO → Menu)
+    // Constructor for READ (DAO to Menu)
     public Task(String title, String description, String status, Timestamp createdAt) {
         this.title = title;
         this.description = description;
@@ -25,7 +25,7 @@ public class Task {
         this.createdAt = createdAt;
     }
 
-    // 3️⃣ Empty constructor (optional but safe)
+    // Empty constructor (optional but safe)
     public Task() {}
 
     // GETTERS & SETTERS

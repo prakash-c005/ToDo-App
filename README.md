@@ -1,4 +1,4 @@
-# 📝 ToDo App (Java + Maven + MySQL)
+# ToDo App (Java, Maven, and MySQL)
 
 A console-based ToDo application built using Java, Maven, and MySQL.
 This project demonstrates CRUD operations, JDBC connectivity, and a
@@ -7,7 +7,7 @@ practice purposes.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Add new tasks
 - View all tasks
@@ -20,7 +20,7 @@ practice purposes.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Java (JDK 21+)
 - Maven
@@ -29,29 +29,21 @@ practice purposes.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-ToDo-App  
-│  
-├── src/main/java  
-│   └── org/prakash  
-│       ├── dao  
-│       │   └── TaskDAO.java  
-│       ├── model  
-│       │   └── Task.java  
-│       ├── menu  
-│       │   └── TaskMenu.java  
-│       └── Main.java  
-│  
-├── src/main/resources  
-│   └── db.properties  
-│  
-├── pom.xml  
-└── README.md  
+ToDo-App
+- src/main/java/org/prakash
+  - dao/TaskDAO.java
+  - model/Task.java
+  - menu/TaskMenu.java
+  - Main.java
+- src/main/resources/application.properties
+- pom.xml
+- README.md
 
 ---
 
-## ⚙️ Database Setup
+## Database Setup
 
 ### Step 1: Create Database
 
@@ -85,7 +77,7 @@ db.password=your_password
 
 ---
 
-## ▶️ How to Run the Application
+## How to Run the Application
 
 ### Option 1: Using Maven
 
@@ -102,7 +94,7 @@ java -jar target/ToDo-App-1.0-SNAPSHOT.jar
 
 ---
 
-## 📌 Sample Menu Output
+## Sample Menu Output
 
 1. Add Task  
 2. View All Tasks  
@@ -114,7 +106,7 @@ java -jar target/ToDo-App-1.0-SNAPSHOT.jar
 
 ---
 
-## 🧠 Concepts Used
+## Concepts Used
 
 - JDBC connection handling
 - DAO (Data Access Object) pattern
@@ -124,7 +116,7 @@ java -jar target/ToDo-App-1.0-SNAPSHOT.jar
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 - How Java connects to MySQL using JDBC
 - Structuring a Java project using Maven
@@ -134,7 +126,7 @@ java -jar target/ToDo-App-1.0-SNAPSHOT.jar
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - GUI using JavaFX or Swing
 - REST API using Spring Boot
@@ -143,13 +135,13 @@ java -jar target/ToDo-App-1.0-SNAPSHOT.jar
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome.
 Feel free to fork the repository and submit pull requests.
 
 ---
 
-## 📄 License
+## License
 
 This project is created for learning and educational purposes only.

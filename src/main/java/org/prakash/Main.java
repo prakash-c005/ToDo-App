@@ -26,7 +26,7 @@ public class Main {
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("⚠ Enter numbers only");
+                System.out.println("Enter numbers only.");
                 continue;
             }
 
@@ -35,7 +35,7 @@ public class Main {
                     System.out.print("Title: ");
                     String title = sc.nextLine().trim();
                     if (title.isEmpty()) {
-                        System.out.println("⚠ Title cannot be empty");
+                        System.out.println("Title cannot be empty.");
                         break;
                     }
                     System.out.print("Description: ");
@@ -47,30 +47,18 @@ public class Main {
                 case 3 -> menu.viewPendingTasks();
                 case 4 -> menu.viewCompletedTasks();
 
-                case 5 -> menu.markCompleted(readPositiveId(sc));
-                case 6 -> menu.deleteTask(readPositiveId(sc));
+                case 5 -> menu.markCompleted(sc);
+                case 6 -> menu.deleteTask(sc);
 
                 case 0 -> {
-                    System.out.println("👋 Bye!");
+                    System.out.println("Goodbye.");
                     sc.close();
                     return;
                 }
 
-                default -> System.out.println("⚠ Invalid choice");
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
 
-    private static int readPositiveId(Scanner sc) {
-        while (true) {
-            System.out.print("Task ID: ");
-            try {
-                int id = Integer.parseInt(sc.nextLine());
-                if (id > 0) return id;
-                System.out.println("⚠ ID must be positive");
-            } catch (NumberFormatException e) {
-                System.out.println("⚠ Enter a valid number");
-            }
-        }
-    }
 }
